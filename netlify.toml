@@ -1,4 +1,3 @@
 [build]
-  base = "felix-coaching"
-  command = "cd client && npm install --legacy-peer-deps && npm run build"
-  publish = "client/dist/public"
+  command = "cd felix-coaching/client && npm install --legacy-peer-deps && npm run build"
+  publish = "felix-coaching/dist/public"
