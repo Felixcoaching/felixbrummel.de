@@ -683,7 +683,7 @@ function Footer() {
             >
               Datenschutz
             </button>
-            
+            <a
               href="https://www.instagram.com"
               target="_blank"
               rel="noopener noreferrer"
