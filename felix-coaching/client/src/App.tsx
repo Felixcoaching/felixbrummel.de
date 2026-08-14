@@ -27,17 +27,19 @@ function ScrollToTop() {
 
 function Router() {
   return (
-    <Switch>
+    <>
       <ScrollToTop />
-      <Route path={"/"} component={Home} />
-      <Route path={"/breathwork-1zu1"} component={Breathwork} />
-      <Route path={"/impressum"} component={Impressum} />
-      <Route path={"/datenschutz"} component={Datenschutz} />
-      <Route path={"/linktree"} component={Linktree} />
-      <Route path={"/404"} component={NotFound} />
-      {/* Final fallback route */}
-      <Route component={NotFound} />
-    </Switch>
+      <Switch>
+        <Route path={"/"} component={Home} />
+        <Route path={"/breathwork-1zu1"} component={Breathwork} />
+        <Route path={"/impressum"} component={Impressum} />
+        <Route path={"/datenschutz"} component={Datenschutz} />
+        <Route path={"/linktree"} component={Linktree} />
+        <Route path={"/404"} component={NotFound} />
+        {/* Final fallback route */}
+        <Route component={NotFound} />
+      </Switch>
+    </>
   );
 }
 
