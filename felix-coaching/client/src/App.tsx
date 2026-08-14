@@ -10,10 +10,25 @@ import Impressum from "./pages/Impressum";
 import Datenschutz from "./pages/Datenschutz";
 import Linktree from "./pages/Linktree";
 
+import { useEffect } from "react";
+import { useLocation } from "wouter";
+
+function ScrollToTop() {
+  const [location] = useLocation();
+  useEffect(() => {
+    document.documentElement.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "instant"
+    });
+  }, [location]);
+  return null;
+}
 
 function Router() {
   return (
     <Switch>
+      <ScrollToTop />
       <Route path={"/"} component={Home} />
       <Route path={"/breathwork-1zu1"} component={Breathwork} />
       <Route path={"/impressum"} component={Impressum} />
