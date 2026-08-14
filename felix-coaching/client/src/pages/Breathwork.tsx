@@ -647,62 +647,57 @@ function ContactSection() {
 // Footer
 function Footer() {
   return (
-    <footer className="relative py-12 overflow-hidden" style={{ background: "#0f1517" }}>
+    <footer
+      className="py-12 border-t"
+      style={{ background: "#0f1a1e", borderColor: "rgba(45,77,68,0.3)" }}
+    >
       <div className="container mx-auto px-6">
-        <div className="max-w-4xl mx-auto">
-          <div className="grid md:grid-cols-3 gap-12 mb-12">
-            {/* Brand */}
-            <div>
-              <h3 className="font-['Cormorant_Garamond'] text-lg mb-4" style={{ color: "#D9E5AF", fontWeight: 500 }}>
-                Felix Brummel
-              </h3>
-              <p className="text-sm leading-relaxed" style={{ color: "rgba(222,213,200,0.5)", fontFamily: "DM Sans, sans-serif" }}>
-                Breathwork & Self-Leadership Coaching
-              </p>
-            </div>
-
-            {/* Links */}
-            <div>
-              <h4 className="text-xs tracking-[0.2em] uppercase mb-4" style={{ color: "rgba(222,213,200,0.6)", fontFamily: "DM Sans, sans-serif" }}>
-                Navigation
-              </h4>
-              <div className="space-y-2">
-                <Link href="/">
-                  <button className="text-sm transition-colors" style={{ color: "rgba(222,213,200,0.5)", fontFamily: "DM Sans, sans-serif" }} onMouseEnter={(e) => (e.currentTarget.style.color = "#D9E5AF")} onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(222,213,200,0.5)")}>
-                    Coaching
-                  </button>
-                </Link>
-                <button onClick={() => window.location.href = '/impressum'} className="block text-sm transition-colors" style={{ color: "rgba(222,213,200,0.5)", fontFamily: "DM Sans, sans-serif", background: "none", border: "none", cursor: "pointer" }} onMouseEnter={(e) => (e.currentTarget.style.color = "#D9E5AF")} onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(222,213,200,0.5)")}>\n                  Impressum\n                </button>
-                <button onClick={() => window.location.href = '/datenschutz'} className="block text-sm transition-colors" style={{ color: "rgba(222,213,200,0.5)", fontFamily: "DM Sans, sans-serif", background: "none", border: "none", cursor: "pointer" }} onMouseEnter={(e) => (e.currentTarget.style.color = "#D9E5AF")} onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(222,213,200,0.5)")}>\n                  Datenschutz\n                </button>
-              </div>
-            </div>
-
-            {/* Social */}
-            <div>
-              <h4 className="text-xs tracking-[0.2em] uppercase mb-4" style={{ color: "rgba(222,213,200,0.6)", fontFamily: "DM Sans, sans-serif" }}>
-                Sozial
-              </h4>
-              <a
-                href="https://instagram.com/felixbrummel"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm transition-colors"
-                style={{ color: "rgba(222,213,200,0.5)", fontFamily: "DM Sans, sans-serif" }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = "#D9E5AF")}
-                onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(222,213,200,0.5)")}
-              >
-                @felixbrummel
-              </a>
-            </div>
-          </div>
-
-          <div className="divider-terracotta mb-8" />
-
-          <div className="text-center">
-            <p className="text-xs" style={{ color: "rgba(222,213,200,0.4)", fontFamily: "DM Sans, sans-serif" }}>
-              © 2025 Felix Brummel. All rights reserved.
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+          <div>
+            <span
+              className="font-['Cormorant_Garamond'] text-lg tracking-widest uppercase"
+              style={{ color: "#D9E5AF" }}
+            >
+              Felix Brummel
+            </span>
+            <p className="text-xs mt-1" style={{ color: "rgba(222,213,200,0.35)", fontFamily: "DM Sans, sans-serif" }}>
+              Self-Leadership - Presence in Action
             </p>
           </div>
+          <div className="flex items-center gap-8">
+            <button
+              onClick={() => window.location.href = '/impressum'}
+              className="text-xs tracking-wider uppercase transition-colors duration-300"
+              style={{ color: "rgba(222,213,200,0.4)", fontFamily: "DM Sans, sans-serif", background: "none", border: "none", cursor: "pointer" }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "rgba(217,229,175,0.7)")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(222,213,200,0.4)")}
+            >
+              Impressum
+            </button>
+            <button
+              onClick={() => window.location.href = '/datenschutz'}
+              className="text-xs tracking-wider uppercase transition-colors duration-300"
+              style={{ color: "rgba(222,213,200,0.4)", fontFamily: "DM Sans, sans-serif", background: "none", border: "none", cursor: "pointer" }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "rgba(217,229,175,0.7)")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(222,213,200,0.4)")}
+            >
+              Datenschutz
+            </button>
+            
+              href="https://www.instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs tracking-wider uppercase transition-colors duration-300"
+              style={{ color: "rgba(222,213,200,0.4)", fontFamily: "DM Sans, sans-serif" }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "rgba(217,229,175,0.7)")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(222,213,200,0.4)")}
+            >
+              Instagram
+            </a>
+          </div>
+          <p className="text-xs" style={{ color: "rgba(222,213,200,0.25)", fontFamily: "DM Sans, sans-serif" }}>
+            © 2026 Felix. Alle Rechte vorbehalten.
+          </p>
         </div>
       </div>
     </footer>
