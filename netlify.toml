@@ -1,3 +1,8 @@
 [build]
   command = "cd felix-coaching/client && npm install --legacy-peer-deps && npm run build"
   publish = "felix-coaching/dist/public"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
