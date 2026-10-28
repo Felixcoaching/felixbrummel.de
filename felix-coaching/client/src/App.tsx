@@ -9,6 +9,7 @@ import Breathwork from "./pages/Breathwork";
 import Impressum from "./pages/Impressum";
 import Datenschutz from "./pages/Datenschutz";
 import Linktree from "./pages/Linktree";
+import FuerDich from "./pages/FuerDich";
 
 import { useEffect } from "react";
 import { useLocation } from "wouter";
@@ -35,6 +36,7 @@ function Router() {
         <Route path={"/impressum"} component={Impressum} />
         <Route path={"/datenschutz"} component={Datenschutz} />
         <Route path={"/linktree"} component={Linktree} />
+        <Route path={"/fuerdich"} component={FuerDich} />
         <Route path={"/404"} component={NotFound} />
         {/* Final fallback route */}
         <Route component={NotFound} />
