@@ -181,7 +181,56 @@ export default function Datenschutz() {
             <FadeIn delay={0.6}>
               <div>
                 <h2 className="font-['Cormorant_Garamond'] text-2xl mb-4" style={{ color: "#DED5C8", fontWeight: 500 }}>
-                  6. Kontakt
+                  6. Kostenloses PDF und Newsletter
+                </h2>
+                <h3 className="font-['Cormorant_Garamond'] text-lg mb-2" style={{ color: "#D9E5AF", fontWeight: 400 }}>
+                  Welche Daten werden gespeichert?
+                </h3>
+                <p className="text-base leading-relaxed mb-4">
+                  Wenn du dich auf der Seite felixbrummel.de/fuerdich für das kostenlose PDF einträgst, speichern wir deinen Namen und deine E-Mail-Adresse. Dazu kommen der Zeitpunkt deiner Anmeldung und deiner Bestätigung, die Angabe, ob du zusätzlich den Newsletter möchtest, und die Version des Einwilligungstextes, dem du zugestimmt hast. Diese Angaben dienen als Nachweis deiner Einwilligung.
+                </p>
+                <h3 className="font-['Cormorant_Garamond'] text-lg mb-2" style={{ color: "#D9E5AF", fontWeight: 400 }}>
+                  Bestätigung per E-Mail (Double-Opt-in)
+                </h3>
+                <p className="text-base leading-relaxed mb-4">
+                  Nach deiner Anmeldung bekommst du eine E-Mail mit einem Bestätigungslink. Erst wenn du darauf klickst, erhältst du das PDF. Bestätigst du nicht, bekommst du keine weiteren E-Mails von uns.
+                </p>
+                <h3 className="font-['Cormorant_Garamond'] text-lg mb-2" style={{ color: "#D9E5AF", fontWeight: 400 }}>
+                  Rechtsgrundlage und Widerruf
+                </h3>
+                <p className="text-base leading-relaxed mb-4">
+                  Die Verarbeitung erfolgt auf Grundlage deiner Einwilligung nach Art. 6 Abs. 1 lit. a DSGVO. Den Nachweis der Einwilligung speichern wir nach Art. 7 Abs. 1 DSGVO. Du kannst deine Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen, auch die für den Newsletter. Schreib dafür einfach eine E-Mail an breathworkmitfelix@gmail.com. Die Rechtmäßigkeit der bis dahin erfolgten Verarbeitung bleibt davon unberührt. Wir löschen deine Daten, sobald du widerrufst oder der Zweck entfällt, soweit keine gesetzlichen Aufbewahrungspflichten entgegenstehen.
+                </p>
+                <h3 className="font-['Cormorant_Garamond'] text-lg mb-2" style={{ color: "#D9E5AF", fontWeight: 400 }}>
+                  Technische Umsetzung
+                </h3>
+                <p className="text-base leading-relaxed mb-4">
+                  Für Anmeldung, Speicherung und E-Mail-Versand nutzen wir Dienste von Google (Google Apps Script, Google Sheets, Google Drive und Gmail). Anbieter ist die Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland. Dabei kann nicht ausgeschlossen werden, dass Daten an Google LLC in die USA übermittelt werden. Beim Absenden des Formulars und beim Herunterladen des PDFs wird außerdem deine IP-Adresse an Google übertragen.
+                </p>
+                <p className="text-base leading-relaxed">
+                  Sollten wir später einen anderen Anbieter für den Newsletter einsetzen, ergänzen wir diese Erklärung entsprechend.
+                </p>
+              </div>
+            </FadeIn>
+
+            <FadeIn delay={0.7}>
+              <div>
+                <h2 className="font-['Cormorant_Garamond'] text-2xl mb-4" style={{ color: "#DED5C8", fontWeight: 500 }}>
+                  7. Kontaktformular
+                </h2>
+                <p className="text-base leading-relaxed mb-4">
+                  Wenn du das Kontaktformular nutzt, speichern wir deinen Namen, deine E-Mail-Adresse und deine Nachricht, damit wir deine Anfrage beantworten können. Die Übermittlung läuft über Google Apps Script, die Nachricht erreicht uns per Gmail und wird zusätzlich in einer Google-Tabelle abgelegt. Anbieter ist die Google Ireland Limited (Anschrift siehe oben). Beim Absenden des Formulars wird deine IP-Adresse an Google übertragen.
+                </p>
+                <p className="text-base leading-relaxed">
+                  Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO, soweit deine Anfrage mit einer möglichen Zusammenarbeit zusammenhängt, ansonsten unser berechtigtes Interesse an der Beantwortung von Anfragen nach Art. 6 Abs. 1 lit. f DSGVO. Wir löschen deine Anfrage, sobald sie erledigt ist und keine gesetzlichen Aufbewahrungspflichten entgegenstehen.
+                </p>
+              </div>
+            </FadeIn>
+
+            <FadeIn delay={0.8}>
+              <div>
+                <h2 className="font-['Cormorant_Garamond'] text-2xl mb-4" style={{ color: "#DED5C8", fontWeight: 500 }}>
+                  8. Kontakt
                 </h2>
                 <p className="text-base leading-relaxed">
                   Für Fragen zur Datenschutzerklärung oder zum Datenschutz allgemein, kontaktiere uns bitte unter den Angaben im Impressum.

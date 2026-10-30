@@ -12,6 +12,10 @@ import { motion, useInView, AnimatePresence } from "framer-motion";
 import { Link } from "wouter";
 
 // Reusable fade-in animation wrapper
+// Hintergründe als reine CSS-Verläufe (keine Bilddateien nötig, laden sofort)
+const GLOW_BG =
+  "radial-gradient(ellipse at 18% 12%, rgba(45,77,68,0.95) 0%, rgba(45,77,68,0) 58%), radial-gradient(ellipse at 88% 90%, rgba(217,229,175,0.16) 0%, rgba(217,229,175,0) 52%), linear-gradient(160deg, #263238 0%, #162024 100%)";
+
 function FadeIn({ children, delay = 0, className = "" }: { children: React.ReactNode; delay?: number; className?: string }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
@@ -146,7 +150,7 @@ function HeroSection() {
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{
-          backgroundImage: "url('https://d2xsxph8kpxj0f.cloudfront.net/310519663466973256/jLBoYwDRJvqxjE94tEjX9y/breathwork-hero-forest-6eFTCK5G42BEByRgxmR56m.webp')",
+          backgroundImage: GLOW_BG,
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundAttachment: "fixed",
@@ -290,7 +294,7 @@ function AboutSection() {
           <FadeIn delay={0.2} className="relative">
             <div className="relative overflow-hidden" style={{ aspectRatio: "3/4", maxHeight: "580px" }}>
               <img
-                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663466973256/jLBoYwDRJvqxjE94tEjX9y/felix-brummel_75872c70.jpg"
+                src="/images/felix-brummel.jpg"
                 alt="Felix Brummel – Breathwork Facilitator"
                 className="w-full h-full object-cover object-top"
                 style={{ filter: "brightness(0.95) saturate(1)" }}
@@ -322,7 +326,7 @@ function SessionSection() {
           <FadeIn className="relative">
             <div className="relative overflow-hidden" style={{ aspectRatio: "3/4", maxHeight: "600px" }}>
               <img
-                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663466973256/jLBoYwDRJvqxjE94tEjX9y/breathwork-session_8873b7e6.jpg"
+                src="/images/breathwork-session.jpg"
                 alt="Breathwork Session"
                 className="w-full h-full object-cover"
                 style={{ filter: "brightness(0.9) saturate(1)" }}
@@ -450,6 +454,78 @@ function ProcessSection() {
               </div>
             </FadeIn>
           ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// Testimonials (freigegeben)
+// Optional: photo: "/images/vera.jpg" ergänzen, dann erscheint das Foto statt des Anfangsbuchstabens
+const BREATHWORK_TESTIMONIALS: { name: string; role: string; text: string; photo?: string }[] = [
+  {
+    name: "Vera",
+    role: "38 Jahre",
+    text: "Felix hat die Fähigkeit mit seiner ruhigen, aufmerksamen und feinfühligen Art die gesamten Breathwork-Sessions so zu begleiten, dass man sich vom ersten Moment an gut und sicher aufgehoben fühlt – besonders aber auch dann, wenn es mal emotional herausfordernd wird. Felix' Art gibt Vertrauen und macht es leicht, sich wirklich auf den Prozess einzulassen. Für mich war es eine unglaublich wertvolle Erfahrung.",
+  },
+];
+
+function TestimonialsSection() {
+  return (
+    <section id="stimmen" className="relative py-32 overflow-hidden" style={{ background: "#1e2c30" }}>
+      <div className="container mx-auto px-6">
+        <div className="max-w-xl mx-auto">
+          <FadeIn>
+            <span className="text-xs tracking-[0.3em] uppercase mb-4 block" style={{ color: "#D9E5AF", fontFamily: "DM Sans, sans-serif" }}>
+              Stimmen
+            </span>
+          </FadeIn>
+          <FadeIn delay={0.1}>
+            <h2
+              className="font-['Cormorant_Garamond'] mb-12 leading-tight"
+              style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)", color: "#F8F8F8", fontWeight: 300 }}
+            >
+              Was andere erlebt haben
+            </h2>
+          </FadeIn>
+          <div className="grid gap-8">
+            {BREATHWORK_TESTIMONIALS.map((t, i) => (
+              <FadeIn key={t.name} delay={0.15 + i * 0.15}>
+                <figure
+                  className="p-8"
+                  style={{ background: "rgba(45,77,68,0.15)", border: "1px solid rgba(45,77,68,0.3)" }}
+                >
+                  <blockquote
+                    className="text-base leading-relaxed"
+                    style={{ color: "rgba(222,213,200,0.85)", fontFamily: "DM Sans, sans-serif" }}
+                  >
+                    {t.text}
+                  </blockquote>
+                  <figcaption className="mt-8 pt-6 flex items-center gap-4" style={{ borderTop: "1px solid rgba(45,77,68,0.4)" }}>
+                    {t.photo ? (
+                      <img src={t.photo} alt={t.name} className="w-12 h-12 rounded-full object-cover" />
+                    ) : (
+                      <span
+                        aria-hidden="true"
+                        className="w-12 h-12 rounded-full flex items-center justify-center font-['Cormorant_Garamond'] text-xl"
+                        style={{ background: "rgba(45,77,68,0.6)", color: "#D9E5AF" }}
+                      >
+                        {t.name.charAt(0)}
+                      </span>
+                    )}
+                    <span>
+                      <span className="font-['Cormorant_Garamond'] text-xl block" style={{ color: "#DED5C8" }}>
+                        {t.name}
+                      </span>
+                      <span className="text-sm block" style={{ color: "rgba(222,213,200,0.55)", fontFamily: "DM Sans, sans-serif" }}>
+                        {t.role}
+                      </span>
+                    </span>
+                  </figcaption>
+                </figure>
+              </FadeIn>
+            ))}
+          </div>
         </div>
       </div>
     </section>
@@ -712,6 +788,7 @@ export default function Breathwork() {
       <AboutSection />
       <SessionSection />
       <ProcessSection />
+      <TestimonialsSection />
       <PricingSection />
       <CoachingConnectionSection />
       <ContactSection />

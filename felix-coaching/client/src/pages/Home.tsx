@@ -11,10 +11,11 @@ import { useEffect, useRef, useState } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import { Link } from "wouter";
 
-const HERO_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663466973256/jLBoYwDRJvqxjE94tEjX9y/hero-bg-gq3jUDavks2hcQaGg4qWU2.webp";
-const PRESENCE_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663466973256/jLBoYwDRJvqxjE94tEjX9y/presence-section-JxxU3FL4D5XnXtrsfM8RSH.webp";
-const ABSTRACT_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663466973256/jLBoYwDRJvqxjE94tEjX9y/transformation-abstract-8YvBcDUcxLraufwRZXaQV2.webp";
-const PORTRAIT_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663466973256/jLBoYwDRJvqxjE94tEjX9y/coaching-portrait-dLvLTQ8HFPFMi8tuh7G6Hk.webp";
+// Hintergründe als reine CSS-Verläufe (keine Bilddateien nötig, laden sofort)
+const GLOW_BG =
+  "radial-gradient(ellipse at 18% 12%, rgba(45,77,68,0.95) 0%, rgba(45,77,68,0) 58%), radial-gradient(ellipse at 88% 90%, rgba(217,229,175,0.16) 0%, rgba(217,229,175,0) 52%), linear-gradient(160deg, #263238 0%, #162024 100%)";
+const ABSTRACT_BG =
+  "radial-gradient(ellipse at 72% 28%, rgba(217,229,175,0.55) 0%, rgba(217,229,175,0) 55%), radial-gradient(ellipse at 22% 78%, rgba(45,77,68,1) 0%, rgba(45,77,68,0) 62%), linear-gradient(200deg, #2D4D44 0%, #162024 100%)";
 
 // Reusable fade-in animation wrapper
 function FadeIn({ children, delay = 0, className = "" }: { children: React.ReactNode; delay?: number; className?: string }) {
@@ -171,7 +172,7 @@ function HeroSection() {
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{
-          backgroundImage: "url('https://d2xsxph8kpxj0f.cloudfront.net/310519663466973256/jLBoYwDRJvqxjE94tEjX9y/evgeni-evgeniev-LPKk3wtkC-g-unsplash_166376f5.webp')",
+          backgroundImage: GLOW_BG,
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundAttachment: "fixed",
@@ -310,7 +311,7 @@ function ProblemSection() {
   return (
     <section id="problem" className="relative py-32 overflow-hidden" style={{ 
       background: "#1a2428",
-      backgroundImage: "url('https://d2xsxph8kpxj0f.cloudfront.net/310519663466973256/jLBoYwDRJvqxjE94tEjX9y/evgeni-evgeniev-LPKk3wtkC-g-unsplash_166376f5.webp')",
+      backgroundImage: GLOW_BG,
       backgroundSize: "cover",
       backgroundPosition: "center",
       backgroundAttachment: "fixed"
@@ -322,7 +323,7 @@ function ProblemSection() {
           <FadeIn className="relative">
             <div className="relative overflow-hidden" style={{ aspectRatio: "3/4", maxHeight: "600px" }}>
               <img
-                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663466973256/jLBoYwDRJvqxjE94tEjX9y/DA-Luzern18-FINALE-73_87092fb4.webp"
+                src="/images/DA-Luzern18-FINALE-73.jpg"
                 alt="Felix – Rudersport"
                 className="w-full h-full object-cover"
                 style={{ filter: "brightness(0.9) saturate(1)" }}
@@ -444,7 +445,7 @@ function RealisationSection() {
       {/* Abstract background */}
       <div
         className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: `url(${ABSTRACT_BG})`, opacity: 0.2 }}
+        style={{ backgroundImage: ABSTRACT_BG, opacity: 0.2 }}
       />
       <div className="absolute inset-0" style={{ background: "rgba(22,32,36,0.7)" }} />
 
@@ -813,7 +814,7 @@ Heute begleite ich Menschen, die spüren, dass es mehr gibt als Funktionieren. D
           <FadeIn delay={0.2} className="relative">
             <div className="relative overflow-hidden" style={{ aspectRatio: "3/4", maxHeight: "580px" }}>
               <img
-                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663466973256/jLBoYwDRJvqxjE94tEjX9y/felix-brummel_75872c70.jpg"
+                src="/images/felix-brummel.jpg"
                 alt="Felix Brummel – Coach"
                 className="w-full h-full object-cover object-top"
                 style={{ filter: "brightness(0.95) saturate(1)" }}
@@ -889,18 +890,114 @@ function BreathworkConnectionSection() {
   );
 }
 
+// Testimonials (freigegeben)
+const HOME_TESTIMONIALS = [
+  {
+    name: "Marius",
+    role: "35 Jahre, selbstständig",
+    text: "In meinem Alltag habe ich gemerkt, dass ich Schwierigkeiten mit dem Thema Wut habe. Dank Felix habe ich über die innere Arbeit und das Nervensystem verstanden, dass alte Verletzungen mich daran gehindert haben, mit Wut richtig umzugehen. Die Sessions mit ihm haben mir extrem dabei geholfen, die Wut mal wirklich zuzulassen, sie wahrzunehmen und richtig zu kanalisieren. Das hat viel mehr Leichtigkeit in meinen Alltag gebracht. Deshalb kann ich Felix und seine Arbeit wärmstens empfehlen!",
+  },
+  {
+    name: "Lisa",
+    role: "Teamleitung strategisches Projektmanagement",
+    text: "Durch die Arbeit mit Felix und das Verständnis meines Nervensystems konnte ich eine tiefliegende Trauer zum ersten Mal wirklich erkennen und ihr Raum geben, statt sie zu überspielen. Über die Körperarbeit durfte ich sie endlich fühlen und ausleben. Das hat etwas in mir gelöst. Es hat mir viel Leichtigkeit geschenkt. Die klare Sicht auf meine eigenen Muster hilft mir, mich von der Vergangenheit zu distanzieren und freier meine Zukunft und Beziehungen zu gestalten. Felix und seine Arbeit kann ich von Herzen empfehlen.",
+  },
+];
+
+function TestimonialsSection() {
+  return (
+    <section id="stimmen" className="relative py-32 overflow-hidden" style={{ background: "#1e2c30" }}>
+      <div className="container mx-auto px-6">
+        <div className="max-w-4xl mx-auto">
+          <FadeIn>
+            <span className="text-xs tracking-[0.3em] uppercase mb-4 block text-center" style={{ color: "#D9E5AF", fontFamily: "DM Sans, sans-serif" }}>
+              Stimmen
+            </span>
+          </FadeIn>
+          <FadeIn delay={0.1}>
+            <h2
+              className="font-['Cormorant_Garamond'] mb-16 leading-tight text-center"
+              style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)", color: "#F8F8F8", fontWeight: 300 }}
+            >
+              Was Klient:innen erleben
+            </h2>
+          </FadeIn>
+          <div className="grid gap-8 md:grid-cols-2">
+            {HOME_TESTIMONIALS.map((t, i) => (
+              <FadeIn key={t.name} delay={0.15 + i * 0.15} className="h-full">
+                <figure
+                  className="p-8 h-full flex flex-col"
+                  style={{ background: "rgba(45,77,68,0.15)", border: "1px solid rgba(45,77,68,0.3)" }}
+                >
+                  <span
+                    aria-hidden="true"
+                    className="font-['Cormorant_Garamond'] leading-none mb-2 block"
+                    style={{ fontSize: "4rem", color: "#D9E5AF", opacity: 0.6 }}
+                  >
+                    &ldquo;
+                  </span>
+                  <blockquote
+                    className="text-base leading-relaxed flex-1"
+                    style={{ color: "rgba(222,213,200,0.85)", fontFamily: "DM Sans, sans-serif" }}
+                  >
+                    {t.text}
+                  </blockquote>
+                  <figcaption className="mt-8 pt-6" style={{ borderTop: "1px solid rgba(45,77,68,0.4)" }}>
+                    <span className="font-['Cormorant_Garamond'] text-xl block" style={{ color: "#DED5C8" }}>
+                      {t.name}
+                    </span>
+                    <span className="text-sm block mt-1" style={{ color: "rgba(222,213,200,0.55)", fontFamily: "DM Sans, sans-serif" }}>
+                      {t.role}
+                    </span>
+                  </figcaption>
+                </figure>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 // Contact / CTA Section
+// Adresse der Google-Apps-Script-Web-App (dieselbe wie auf der Seite /fuerdich)
+const CONTACT_API_URL = "https://script.google.com/macros/s/AKfycbxvZHaEw_cN5cLIggGENZTQ4_rYMxTJZJV7pJUew3nIQjZ05vhdx-TrprNfNxSbOHS7/exec";
+
 function ContactSection() {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
-  const [submitted, setSubmitted] = useState(false);
+  const [honeypot, setHoneypot] = useState("");
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+  const submitted = status === "sent";
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Opens mailto as fallback
-    const subject = encodeURIComponent("Coaching Gespräch anfragen");
-    const body = encodeURIComponent(`Name: ${formData.name}\nE-Mail: ${formData.email}\n\nNachricht:\n${formData.message}`);
-    window.location.href = `mailto:felix@breathworkmitfelix.com?subject=${subject}&body=${body}`;
-    setSubmitted(true);
+
+    // Honeypot: Bots füllen das versteckte Feld aus. Wir tun so, als wäre alles gut.
+    if (honeypot) {
+      setStatus("sent");
+      return;
+    }
+
+    setStatus("sending");
+    try {
+      const res = await fetch(CONTACT_API_URL, {
+        method: "POST",
+        // text/plain vermeidet eine CORS-Vorabprüfung bei Google Apps Script
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify({
+          action: "contact",
+          name: formData.name.trim(),
+          email: formData.email.trim(),
+          message: formData.message.trim(),
+        }),
+      });
+      const data = await res.json();
+      if (!data || !data.ok) throw new Error("Senden fehlgeschlagen");
+      setStatus("sent");
+    } catch {
+      setStatus("error");
+    }
   };
 
   return (
@@ -938,6 +1035,15 @@ function ContactSection() {
           <FadeIn delay={0.3}>
             {!submitted ? (
               <form onSubmit={handleSubmit} className="space-y-5">
+                {status === "error" && (
+                  <p
+                    className="text-sm text-center py-3 px-4"
+                    style={{ color: "#DED5C8", border: "1px solid rgba(217,229,175,0.3)", fontFamily: "DM Sans, sans-serif" }}
+                    role="alert"
+                  >
+                    Das hat gerade nicht geklappt. Versuch es bitte gleich noch einmal.
+                  </p>
+                )}
                 <div className="grid sm:grid-cols-2 gap-5">
                   <div>
                     <label className="block text-xs tracking-wider uppercase mb-2" style={{ color: "rgba(217,229,175,0.6)", fontFamily: "DM Sans, sans-serif" }}>
@@ -1002,9 +1108,31 @@ function ContactSection() {
                     placeholder="Beschreib kurz, was dich bewegt und was du dir wünschst…"
                   />
                 </div>
+                {/* Honeypot gegen Bots: für Menschen unsichtbar */}
+                <div aria-hidden="true" style={{ position: "absolute", left: "-9999px", height: 0, overflow: "hidden" }}>
+                  <label htmlFor="contact-website">Website</label>
+                  <input
+                    id="contact-website"
+                    type="text"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    value={honeypot}
+                    onChange={(e) => setHoneypot(e.target.value)}
+                  />
+                </div>
+                <p className="text-xs leading-relaxed" style={{ color: "rgba(222,213,200,0.4)", fontFamily: "DM Sans, sans-serif" }}>
+                  Ich nutze deine Angaben nur, um deine Anfrage zu beantworten. Mehr dazu in der{" "}
+                  <Link href="/datenschutz">
+                    <span className="underline cursor-pointer" style={{ color: "#D9E5AF" }}>
+                      Datenschutzerklärung
+                    </span>
+                  </Link>
+                  .
+                </p>
                 <button
                   type="submit"
-                  className="w-full py-4 text-sm tracking-widest uppercase transition-all duration-400"
+                  disabled={status === "sending"}
+                  className="w-full py-4 text-sm tracking-widest uppercase transition-all duration-400 disabled:opacity-60"
                   style={{
                     background: "rgba(217,229,175,0.12)",
                     border: "1px solid rgba(217,229,175,0.5)",
@@ -1022,7 +1150,7 @@ function ContactSection() {
                     e.currentTarget.style.boxShadow = "none";
                   }}
                 >
-                  Jetzt Gespräch anfragen
+                  {status === "sending" ? "Wird gesendet …" : "Jetzt Gespräch anfragen"}
                 </button>
               </form>
             ) : (
@@ -1124,6 +1252,7 @@ export default function Home() {
       <OfferCTASection />
       <IdentitySection />
       <AboutSection />
+      <TestimonialsSection />
       <ContactSection />
       <BreathworkConnectionSection />
       <Footer />
