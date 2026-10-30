@@ -15,7 +15,7 @@ import { Link } from "wouter";
 // ---------------------------------------------------------------------------
 
 // URL der Google-Apps-Script-Web-App (siehe Anleitung, Schritt "Bereitstellen")
-const API_URL = https://script.google.com/macros/s/AKfycbxvZHaEw_cN5cLIggGENZTQ4_rYMxTJZJV7pJUew3nIQjZ05vhdx-TrprNfNxSbOHS7/exec;
+const API_URL = "https://script.google.com/macros/s/AKfycbxvZHaEw_cN5cLIggGENZTQ4_rYMxTJZJV7pJUew3nIQjZ05vhdx-TrprNfNxSbOHS7/exec";
 
 // Version des Einwilligungstexts. Bei JEDER Änderung der Texte unten hochzählen.
 // Sie wird mit jeder Anmeldung im Sheet gespeichert und dient als Nachweis.
