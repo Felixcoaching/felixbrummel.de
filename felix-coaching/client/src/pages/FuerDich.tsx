@@ -19,10 +19,10 @@ const API_URL = "https://script.google.com/macros/s/AKfycbxvZHaEw_cN5cLIggGENZTQ
 
 // Version des Einwilligungstexts. Bei JEDER Änderung der Texte unten hochzählen.
 // Sie wird mit jeder Anmeldung im Sheet gespeichert und dient als Nachweis.
-const CONSENT_VERSION = "2026-10-28-v1";
+const CONSENT_VERSION = "2026-11-09-v2";
 
-// false = Newsletter-Haken ist freiwillig (rechtlich der sicherere Weg)
-const NEWSLETTER_PFLICHT = false;
+// Link zur Workshop-Anmeldung
+const WORKSHOP_URL = "https://tidycal.com/breathworkmitfelix";
 
 // ---------------------------------------------------------------------------
 
@@ -70,7 +70,6 @@ export default function FuerDich() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [consentPrivacy, setConsentPrivacy] = useState(false);
-  const [consentNewsletter, setConsentNewsletter] = useState(false);
   const [honeypot, setHoneypot] = useState("");
   const [downloadUrl, setDownloadUrl] = useState("");
 
@@ -124,7 +123,8 @@ export default function FuerDich() {
           name: name.trim(),
           email: email.trim(),
           consentPrivacy,
-          consentNewsletter,
+          // Die Newsletter-Zustimmung ist Teil des Absendens (Text unter dem Formular)
+          consentNewsletter: true,
           consentVersion: CONSENT_VERSION,
         }),
       });
@@ -336,20 +336,19 @@ export default function FuerDich() {
                     </span>
                   </label>
 
-                  {/* Einwilligung 2: Newsletter */}
-                  <label className="flex items-start gap-3 cursor-pointer">
-                    <input
-                      type="checkbox"
-                      required={NEWSLETTER_PFLICHT}
-                      checked={consentNewsletter}
-                      onChange={(e) => setConsentNewsletter(e.target.checked)}
-                      className="mt-1 shrink-0"
-                      style={{ accentColor: "#D9E5AF", width: 16, height: 16 }}
-                    />
-                    <span className="text-xs leading-relaxed" style={{ color: "rgba(222,213,200,0.6)", fontFamily: "DM Sans, sans-serif" }}>
-                      Ich möchte zusätzlich den Newsletter mit Impulsen zu Atmung, Körper und Präsenz erhalten. Ich kann mich jederzeit mit einem Klick abmelden.
-                    </span>
-                  </label>
+                  {/* Einwilligung 2: Newsletter. Kein Haken, die Zustimmung gehört zum Absenden. */}
+                  <p className="text-xs leading-relaxed" style={{ color: "rgba(222,213,200,0.6)", fontFamily: "DM Sans, sans-serif" }}>
+                    Mit dem Absenden stimme ich zu, dass Felix Brummel mir den Newsletter mit Impulsen zu Atmung, Körper und Präsenz an meine
+                    E-Mail-Adresse senden darf. Ich kann diese Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen und den Newsletter
+                    mit einem Klick abbestellen (Link in jeder Newsletter-Mail). Die Rechtmäßigkeit der bis dahin erfolgten Verarbeitung bleibt
+                    unberührt. Mehr dazu in der{" "}
+                    <Link href="/datenschutz">
+                      <span className="underline cursor-pointer" style={{ color: "#D9E5AF" }}>
+                        Datenschutzerklärung
+                      </span>
+                    </Link>
+                    .
+                  </p>
 
                   <button
                     type="submit"
@@ -376,6 +375,22 @@ export default function FuerDich() {
                   className="w-12 h-px mx-auto mb-10"
                   style={{ background: "linear-gradient(to right, transparent, #D9E5AF, transparent)" }}
                 />
+                <div className="text-center mb-12">
+                  <a
+                    href={WORKSHOP_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block px-10 py-4 text-sm tracking-widest uppercase transition-all duration-300"
+                    style={ctaButtonStyle}
+                    onMouseEnter={ctaHoverOn}
+                    onMouseLeave={ctaHoverOff}
+                  >
+                    Workshop
+                  </a>
+                  <p className="text-xs mt-3" style={{ color: "rgba(222,213,200,0.4)", fontFamily: "DM Sans, sans-serif" }}>
+                    Hier geht es zur Anmeldung
+                  </p>
+                </div>
                 <p className="text-xs tracking-[0.3em] uppercase mb-6 text-center" style={{ color: "rgba(217,229,175,0.6)", fontFamily: "DM Sans, sans-serif" }}>
                   Mehr von mir
                 </p>

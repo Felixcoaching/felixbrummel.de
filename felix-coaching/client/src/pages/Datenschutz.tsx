@@ -187,7 +187,7 @@ export default function Datenschutz() {
                   Welche Daten werden gespeichert?
                 </h3>
                 <p className="text-base leading-relaxed mb-4">
-                  Wenn du dich auf der Seite felixbrummel.de/fuerdich für das kostenlose PDF einträgst, speichern wir deinen Namen und deine E-Mail-Adresse. Dazu kommen der Zeitpunkt deiner Anmeldung und deiner Bestätigung, die Angabe, ob du zusätzlich den Newsletter möchtest, und die Version des Einwilligungstextes, dem du zugestimmt hast. Diese Angaben dienen als Nachweis deiner Einwilligung.
+                  Wenn du dich auf der Seite felixbrummel.de/fuerdich für das kostenlose PDF einträgst, speichern wir deinen Namen und deine E-Mail-Adresse. Dazu kommen der Zeitpunkt deiner Anmeldung und deiner Bestätigung, die Zustimmung zum Newsletter und die Version des Einwilligungstextes, dem du zugestimmt hast. Mit dem Absenden des Formulars stimmst du zu, dass wir dir den Newsletter senden dürfen. Diese Angaben dienen als Nachweis deiner Einwilligung.
                 </p>
                 <h3 className="font-['Cormorant_Garamond'] text-lg mb-2" style={{ color: "#D9E5AF", fontWeight: 400 }}>
                   Bestätigung per E-Mail (Double-Opt-in)
@@ -199,7 +199,7 @@ export default function Datenschutz() {
                   Rechtsgrundlage und Widerruf
                 </h3>
                 <p className="text-base leading-relaxed mb-4">
-                  Die Verarbeitung erfolgt auf Grundlage deiner Einwilligung nach Art. 6 Abs. 1 lit. a DSGVO. Den Nachweis der Einwilligung speichern wir nach Art. 7 Abs. 1 DSGVO. Du kannst deine Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen, auch die für den Newsletter. Schreib dafür einfach eine E-Mail an breathworkmitfelix@gmail.com. Die Rechtmäßigkeit der bis dahin erfolgten Verarbeitung bleibt davon unberührt. Wir löschen deine Daten, sobald du widerrufst oder der Zweck entfällt, soweit keine gesetzlichen Aufbewahrungspflichten entgegenstehen.
+                  Die Verarbeitung erfolgt auf Grundlage deiner Einwilligung nach Art. 6 Abs. 1 lit. a DSGVO. Den Nachweis der Einwilligung speichern wir nach Art. 7 Abs. 1 DSGVO. Du kannst deine Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen, auch die für den Newsletter. Dafür kannst du den Abmeldelink in jeder Newsletter-Mail nutzen oder eine E-Mail an breathworkmitfelix@gmail.com schreiben. Die Rechtmäßigkeit der bis dahin erfolgten Verarbeitung bleibt davon unberührt. Wir löschen deine Daten, sobald du widerrufst oder der Zweck entfällt, soweit keine gesetzlichen Aufbewahrungspflichten entgegenstehen.
                 </p>
                 <h3 className="font-['Cormorant_Garamond'] text-lg mb-2" style={{ color: "#D9E5AF", fontWeight: 400 }}>
                   Technische Umsetzung
